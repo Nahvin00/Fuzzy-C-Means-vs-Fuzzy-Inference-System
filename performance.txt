@@ -1,0 +1,2 @@
+FIS Average Error = 0.5954
+FCM Average Error = 0.4366

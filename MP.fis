@@ -1,0 +1,114 @@
+[System]
+Name='MP'
+Type='mamdani'
+Version=2.0
+NumInputs=7
+NumOutputs=1
+NumRules=36
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Age'
+Range=[0 100]
+NumMFs=3
+MF1='young':'trapmf',[0 0 20 30]
+MF2='middleage':'trimf',[25 40 55]
+MF3='old':'trapmf',[50 60 100 100]
+
+[Input2]
+Name='Gender'
+Range=[0 1]
+NumMFs=2
+MF1='female':'trimf',[0 0 0]
+MF2='male':'trimf',[1 1 1]
+
+[Input3]
+Name='Height'
+Range=[150 200]
+NumMFs=3
+MF1='short':'trapmf',[150 150 160 170]
+MF2='average':'trimf',[165 175 185]
+MF3='tall':'trapmf',[180 190 200 200]
+
+[Input4]
+Name='Illness'
+Range=[0 1]
+NumMFs=2
+MF1='no':'trimf',[0 0 0]
+MF2='yes':'trimf',[1 1 1]
+
+[Input5]
+Name='Activeness'
+Range=[1 5]
+NumMFs=5
+MF1='one':'trimf',[1 1 1]
+MF2='two':'trimf',[2 2 2]
+MF3='three':'trimf',[3 3 3]
+MF4='four':'trimf',[4 4 4]
+MF5='five':'trimf',[5 5 5]
+
+[Input6]
+Name='CalorieCon'
+Range=[1700 3140]
+NumMFs=3
+MF1='lowcal':'trapmf',[1700 1700 2020 2340]
+MF2='mediumcal':'trapmf',[2020 2340 2500 2820]
+MF3='highcal':'trapmf',[2500 2820 3140 3140]
+
+[Input7]
+Name='WaterCon'
+Range=[1 6]
+NumMFs=3
+MF1='lowwater':'trapmf',[1 1 2.25 2.875]
+MF2='mediumwater':'trapmf',[2.25 2.875 4.125 4.75]
+MF3='highwater':'trapmf',[4.125 4.75 6 6]
+
+[Output1]
+Name='WeightChange'
+Range=[-2 2]
+NumMFs=3
+MF1='wloss':'trapmf',[-2 -2 -1 -0.5]
+MF2='wmaintain':'trapmf',[-1 -0.5 0.5 1]
+MF3='wgain':'trapmf',[0.5 1 2 2]
+
+[Rules]
+0 0 0 0 4 0 3, 1 (1) : 1
+0 0 0 0 0 1 3, 1 (1) : 1
+0 0 1 0 5 0 0, 1 (1) : 1
+3 0 0 0 2 0 0, 3 (1) : 1
+0 1 0 0 0 3 0, 3 (1) : 1
+1 0 0 1 0 0 0, 2 (1) : 1
+0 0 0 0 0 3 1, 3 (1) : 1
+0 2 0 0 5 0 0, 1 (1) : 1
+0 0 0 0 0 2 2, 2 (1) : 1
+3 0 0 2 0 0 0, 1 (1) : 1
+1 0 0 0 5 0 0, 1 (1) : 1
+3 0 0 0 0 3 0, 3 (1) : 1
+1 0 0 0 0 0 1, 1 (1) : 1
+0 0 1 0 0 3 0, 3 (1) : 1
+0 0 2 0 0 0 2, 2 (1) : 1
+0 1 0 0 0 1 0, 1 (1) : 1
+0 2 0 0 0 3 0, 3 (1) : 1
+0 1 0 0 0 1 0, 1 (1) : 1
+0 1 0 0 0 3 0, 3 (1) : 1
+3 0 0 0 1 0 0, 3 (1) : 1
+2 0 0 0 5 1 1, 1 (1) : 1
+1 0 0 0 5 1 1, 1 (1) : 1
+3 0 0 0 5 1 1, 1 (1) : 1
+0 0 0 2 1 2 2, 1 (1) : 1
+0 0 0 0 5 3 3, 2 (1) : 1
+0 0 0 0 5 3 1, 1 (1) : 1
+0 0 0 0 5 1 3, 1 (1) : 1
+0 0 0 0 1 1 1, 2 (1) : 1
+0 0 0 0 1 1 1, 2 (1) : 1
+0 0 0 0 2 1 1, 2 (1) : 1
+0 0 0 0 3 1 1, 1 (1) : 1
+0 0 0 0 3 3 3, 2 (1) : 1
+0 0 0 0 5 3 3, 3 (1) : 1
+0 0 0 0 3 2 2, 2 (1) : 1
+0 0 0 0 5 2 2, 2 (1) : 1
+0 0 0 0 1 2 2, 3 (1) : 1
